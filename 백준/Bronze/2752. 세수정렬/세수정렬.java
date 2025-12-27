@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(bf.readLine());
+        
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
+        int C = Integer.parseInt(st.nextToken());
+        
+        int[] numbers = {A, B, C};
+        Arrays.sort(numbers);
+        
+        System.out.println(numbers[0] + " " + numbers[1] + " " + numbers[2]);
+    }
+}
