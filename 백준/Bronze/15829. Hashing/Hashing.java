@@ -13,7 +13,7 @@ public class Main{
 
         for(int i = 0; i < L; i++) {
             int num = s.charAt(i) - 'a' + 1; // a는 1, b는 2, ... z는 26
-            result += (num * power) % M; // 오버플로우 방지
+            result = (result + (num * power)) % M; // 오버플로우 방지
             power = power * 31 % M; // 다음 자리수의 가중치 계산
         }
         System.out.println(result);
