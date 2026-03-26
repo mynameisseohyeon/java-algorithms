@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args) throws IOException{ // 좌표 정렬하기 2
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int[][] arr = new int[N][2]; // x, y 좌표
+
+        for(int i = 0; i < N; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            arr[i][0] = Integer.parseInt(st.nextToken());
+            arr[i][1] = Integer.parseInt(st.nextToken());
+        }
+
+        Arrays.sort(arr, (p1, p2) -> {
+            if(p1[1] == p2[1]) {
+                return p1[0] - p2[0];
+            } else {
+                return p1[1] - p2[1];
+            }
+        });
+
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < N; i++) {
+            sb.append(arr[i][0]).append(" ").append(arr[i][1]).append("\n");
+        }
+
+        System.out.println(sb.toString());
+    }
+}
