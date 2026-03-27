@@ -20,13 +20,14 @@ public class Main{
         }
 
         Arrays.sort(arr);
-
+        StringBuilder sb = new StringBuilder();
         for(int i = 0; i < M; i++){
             if(Arrays.binarySearch(arr, arr2[i]) >= 0) { // arr에 arr2[i]가 존재하는지 확인
-                System.out.println("1");
+                sb.append("1\n");
             } else {
-                System.out.println("0");
+                sb.append("0\n");
             }
         }
+        System.out.println(sb.toString().trim());
     }
 }
